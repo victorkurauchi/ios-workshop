@@ -10,7 +10,7 @@
 		420E59001B5DB25200F81A48 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 420E58FF1B5DB25200F81A48 /* main.m */; };
 		420E59031B5DB25300F81A48 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 420E59021B5DB25300F81A48 /* AppDelegate.m */; };
 		420E59061B5DB25300F81A48 /* ContatosIP67.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 420E59041B5DB25300F81A48 /* ContatosIP67.xcdatamodeld */; };
-		420E59091B5DB25300F81A48 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 420E59081B5DB25300F81A48 /* ViewController.m */; };
+		420E59091B5DB25300F81A48 /* FormularioContatoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 420E59081B5DB25300F81A48 /* FormularioContatoViewController.m */; };
 		420E590C1B5DB25300F81A48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 420E590A1B5DB25300F81A48 /* Main.storyboard */; };
 		420E590E1B5DB25300F81A48 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 420E590D1B5DB25300F81A48 /* Images.xcassets */; };
 		420E59111B5DB25300F81A48 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 420E590F1B5DB25300F81A48 /* LaunchScreen.xib */; };
@@ -34,8 +34,8 @@
 		420E59011B5DB25200F81A48 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		420E59021B5DB25300F81A48 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		420E59051B5DB25300F81A48 /* ContatosIP67.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ContatosIP67.xcdatamodel; sourceTree = "<group>"; };
-		420E59071B5DB25300F81A48 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		420E59081B5DB25300F81A48 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		420E59071B5DB25300F81A48 /* FormularioContatoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FormularioContatoViewController.h; sourceTree = "<group>"; };
+		420E59081B5DB25300F81A48 /* FormularioContatoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FormularioContatoViewController.m; sourceTree = "<group>"; };
 		420E590B1B5DB25300F81A48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		420E590D1B5DB25300F81A48 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		420E59101B5DB25300F81A48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -85,8 +85,8 @@
 			children = (
 				420E59011B5DB25200F81A48 /* AppDelegate.h */,
 				420E59021B5DB25300F81A48 /* AppDelegate.m */,
-				420E59071B5DB25300F81A48 /* ViewController.h */,
-				420E59081B5DB25300F81A48 /* ViewController.m */,
+				420E59071B5DB25300F81A48 /* FormularioContatoViewController.h */,
+				420E59081B5DB25300F81A48 /* FormularioContatoViewController.m */,
 				420E590A1B5DB25300F81A48 /* Main.storyboard */,
 				420E590D1B5DB25300F81A48 /* Images.xcassets */,
 				420E590F1B5DB25300F81A48 /* LaunchScreen.xib */,
@@ -224,7 +224,7 @@
 			files = (
 				420E59031B5DB25300F81A48 /* AppDelegate.m in Sources */,
 				420E59061B5DB25300F81A48 /* ContatosIP67.xcdatamodeld in Sources */,
-				420E59091B5DB25300F81A48 /* ViewController.m in Sources */,
+				420E59091B5DB25300F81A48 /* FormularioContatoViewController.m in Sources */,
 				420E59001B5DB25200F81A48 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
