@@ -15,6 +15,7 @@
 		420E590E1B5DB25300F81A48 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 420E590D1B5DB25300F81A48 /* Images.xcassets */; };
 		420E59111B5DB25300F81A48 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 420E590F1B5DB25300F81A48 /* LaunchScreen.xib */; };
 		420E591D1B5DB25300F81A48 /* ContatosIP67Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 420E591C1B5DB25300F81A48 /* ContatosIP67Tests.m */; };
+		420E59281B5DDA4C00F81A48 /* Contato.m in Sources */ = {isa = PBXBuildFile; fileRef = 420E59271B5DDA4C00F81A48 /* Contato.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,8 @@
 		420E59161B5DB25300F81A48 /* ContatosIP67Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ContatosIP67Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		420E591B1B5DB25300F81A48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		420E591C1B5DB25300F81A48 /* ContatosIP67Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContatosIP67Tests.m; sourceTree = "<group>"; };
+		420E59261B5DDA4C00F81A48 /* Contato.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contato.h; sourceTree = "<group>"; };
+		420E59271B5DDA4C00F81A48 /* Contato.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contato.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +86,8 @@
 		420E58FC1B5DB25200F81A48 /* ContatosIP67 */ = {
 			isa = PBXGroup;
 			children = (
+				420E59261B5DDA4C00F81A48 /* Contato.h */,
+				420E59271B5DDA4C00F81A48 /* Contato.m */,
 				420E59011B5DB25200F81A48 /* AppDelegate.h */,
 				420E59021B5DB25300F81A48 /* AppDelegate.m */,
 				420E59071B5DB25300F81A48 /* FormularioContatoViewController.h */,
@@ -222,6 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				420E59281B5DDA4C00F81A48 /* Contato.m in Sources */,
 				420E59031B5DB25300F81A48 /* AppDelegate.m in Sources */,
 				420E59061B5DB25300F81A48 /* ContatosIP67.xcdatamodeld in Sources */,
 				420E59091B5DB25300F81A48 /* FormularioContatoViewController.m in Sources */,
