@@ -10,4 +10,8 @@
 
 @implementation Contato
 
+-(NSString *) description {
+    return _nome;
+}
+
 @end

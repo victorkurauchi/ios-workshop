@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Contato.h"
+#import "ContatoDAO.h"
 
 @interface FormularioContatoViewController : UIViewController
 
@@ -15,6 +17,7 @@
 @property IBOutlet UITextField *email;
 @property IBOutlet UITextField *endereco;
 @property IBOutlet UITextField *site;
+@property ContatoDAO *dao;
 
 - (IBAction)getDadosForm;
 
