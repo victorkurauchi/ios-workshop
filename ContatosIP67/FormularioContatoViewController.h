@@ -17,7 +17,7 @@
 @property IBOutlet UITextField *email;
 @property IBOutlet UITextField *endereco;
 @property IBOutlet UITextField *site;
-@property ContatoDAO *dao;
+@property (strong) ContatoDAO *dao;
 @property (strong) Contato *contato;
 
 @end

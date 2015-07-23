@@ -19,6 +19,7 @@
                                                                               target: self
                                                                               action: @selector(mostraForm)];
         self.navigationItem.rightBarButtonItem = add;
+        self.dao = [ContatoDAO getInstance];
     }
     
     return self;
@@ -31,5 +32,14 @@
     
     [self.navigationController pushViewController:f animated:YES];
 }
+
+- (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [self.dao.lista count];
+}
+
 
 @end
