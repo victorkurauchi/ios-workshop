@@ -18,6 +18,9 @@
 		420E59281B5DDA4C00F81A48 /* Contato.m in Sources */ = {isa = PBXBuildFile; fileRef = 420E59271B5DDA4C00F81A48 /* Contato.m */; };
 		423C74C21B5F17DA00D6E155 /* ContatoDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 423C74C11B5F17DA00D6E155 /* ContatoDAO.m */; };
 		423C74C51B5F297100D6E155 /* ListaContatosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 423C74C41B5F297100D6E155 /* ListaContatosViewController.m */; };
+		557CA8771B60A3BF00AF4F91 /* APIConsumer.m in Sources */ = {isa = PBXBuildFile; fileRef = 557CA8761B60A3BF00AF4F91 /* APIConsumer.m */; };
+		557CA87A1B60A81100AF4F91 /* CategoryCommunicatorDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 557CA8791B60A81100AF4F91 /* CategoryCommunicatorDelegate.m */; };
+		557CA87D1B60A88000AF4F91 /* CategoryCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 557CA87C1B60A88000AF4F91 /* CategoryCommunicator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,12 @@
 		423C74C11B5F17DA00D6E155 /* ContatoDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContatoDAO.m; sourceTree = "<group>"; };
 		423C74C31B5F297100D6E155 /* ListaContatosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListaContatosViewController.h; sourceTree = "<group>"; };
 		423C74C41B5F297100D6E155 /* ListaContatosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListaContatosViewController.m; sourceTree = "<group>"; };
+		557CA8751B60A3BF00AF4F91 /* APIConsumer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIConsumer.h; sourceTree = "<group>"; };
+		557CA8761B60A3BF00AF4F91 /* APIConsumer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIConsumer.m; sourceTree = "<group>"; };
+		557CA8781B60A81100AF4F91 /* CategoryCommunicatorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryCommunicatorDelegate.h; sourceTree = "<group>"; };
+		557CA8791B60A81100AF4F91 /* CategoryCommunicatorDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryCommunicatorDelegate.m; sourceTree = "<group>"; };
+		557CA87B1B60A88000AF4F91 /* CategoryCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryCommunicator.h; sourceTree = "<group>"; };
+		557CA87C1B60A88000AF4F91 /* CategoryCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryCommunicator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +105,12 @@
 				420E59271B5DDA4C00F81A48 /* Contato.m */,
 				423C74C01B5F17DA00D6E155 /* ContatoDAO.h */,
 				423C74C11B5F17DA00D6E155 /* ContatoDAO.m */,
+				557CA8751B60A3BF00AF4F91 /* APIConsumer.h */,
+				557CA8761B60A3BF00AF4F91 /* APIConsumer.m */,
+				557CA8781B60A81100AF4F91 /* CategoryCommunicatorDelegate.h */,
+				557CA8791B60A81100AF4F91 /* CategoryCommunicatorDelegate.m */,
+				557CA87B1B60A88000AF4F91 /* CategoryCommunicator.h */,
+				557CA87C1B60A88000AF4F91 /* CategoryCommunicator.m */,
 				423C74C31B5F297100D6E155 /* ListaContatosViewController.h */,
 				423C74C41B5F297100D6E155 /* ListaContatosViewController.m */,
 				420E59011B5DB25200F81A48 /* AppDelegate.h */,
@@ -238,11 +253,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				420E59281B5DDA4C00F81A48 /* Contato.m in Sources */,
+				557CA87A1B60A81100AF4F91 /* CategoryCommunicatorDelegate.m in Sources */,
 				420E59031B5DB25300F81A48 /* AppDelegate.m in Sources */,
 				423C74C51B5F297100D6E155 /* ListaContatosViewController.m in Sources */,
 				420E59061B5DB25300F81A48 /* ContatosIP67.xcdatamodeld in Sources */,
 				423C74C21B5F17DA00D6E155 /* ContatoDAO.m in Sources */,
+				557CA87D1B60A88000AF4F91 /* CategoryCommunicator.m in Sources */,
 				420E59091B5DB25300F81A48 /* FormularioContatoViewController.m in Sources */,
+				557CA8771B60A3BF00AF4F91 /* APIConsumer.m in Sources */,
 				420E59001B5DB25200F81A48 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

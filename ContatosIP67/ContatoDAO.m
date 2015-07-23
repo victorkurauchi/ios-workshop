@@ -25,10 +25,6 @@ static ContatoDAO *daoCriado = nil;
 - (void) insere:(Contato *)contato {
     [self.lista addObject:contato];
     NSLog(@"CONTATOS: %@", self.lista);
-//    
-//    for (<#type *object#> in <#collection#>) {
-//        <#statements#>
-//    }
 }
 
 + (id) getInstance {
