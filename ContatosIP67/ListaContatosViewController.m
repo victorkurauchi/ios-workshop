@@ -10,4 +10,26 @@
 
 @implementation ListaContatosViewController
 
+- (id) init {
+    self = [super init];
+    if (self) {
+        self.navigationItem.title = @"Contatos";
+        
+        UIBarButtonItem *add = [[ UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                                                              target: self
+                                                                              action: @selector(mostraForm)];
+        self.navigationItem.rightBarButtonItem = add;
+    }
+    
+    return self;
+}
+
+- (void) mostraForm {
+    NSLog(@"huehueh");
+    UIStoryboard *board = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    FormularioContatoViewController *f = [board instantiateViewControllerWithIdentifier:@"formContato"];
+    
+    [self.navigationController pushViewController:f animated:YES];
+}
+
 @end

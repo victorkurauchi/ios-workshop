@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import "ListaContatosViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

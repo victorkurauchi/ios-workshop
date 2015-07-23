@@ -18,8 +18,7 @@
 @property IBOutlet UITextField *endereco;
 @property IBOutlet UITextField *site;
 @property ContatoDAO *dao;
-
-- (IBAction)getDadosForm;
+@property (strong) Contato *contato;
 
 @end
 
