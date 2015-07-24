@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol CategoryCommunicatorDelegate
+@protocol CategoryCommunicatorDelegate;
+
+@interface CategoryCommunicatorDelegate : NSObject
 
 - (void)receivedCategoriesJSON:(NSData *)objectNotation;
 - (void)fetchingCategoriesFailedWithError:(NSError *)error;

@@ -12,5 +12,8 @@
 #import "ContatoDAO.h"
 
 @interface ListaContatosViewController : UITableViewController
-    @property (strong) ContatoDAO *dao;
+
+@property (strong) ContatoDAO *dao;
+@property (strong) Contato *selected;
+
 @end

@@ -14,6 +14,10 @@
 @property (strong, readonly) NSMutableArray* lista;
 
 - (void) insere:(Contato *)contato;
+- (Contato *) getPorPosicao:(NSInteger)posicao;
+- (NSInteger) getTotal;
+- (void) deletePorPosicao:(NSInteger)posicao ;
+
 + (id) getInstance;
 
 @end

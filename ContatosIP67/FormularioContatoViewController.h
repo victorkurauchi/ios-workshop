@@ -19,6 +19,7 @@
 @property IBOutlet UITextField *site;
 @property (strong) ContatoDAO *dao;
 @property (strong) Contato *contato;
+@property UIBarButtonItem *adiciona;
 
 @end
 

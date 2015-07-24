@@ -27,6 +27,22 @@ static ContatoDAO *daoCriado = nil;
     NSLog(@"CONTATOS: %@", self.lista);
 }
 
+- (void) atualizaContato:(Contato *)contato NaPosicao:(NSInteger *)posicao {
+    
+}
+
+- (Contato *) getPorPosicao:(NSInteger)posicao {
+    return self.lista[posicao];
+}
+
+- (void) deletePorPosicao:(NSInteger)posicao {
+    [self.lista removeObject:self.lista[posicao]];
+}
+
+- (NSInteger) getTotal {
+    return [self.lista count];
+}
+
 + (id) getInstance {
     if (!daoCriado) {
         daoCriado = [ContatoDAO new];

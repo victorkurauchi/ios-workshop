@@ -10,4 +10,12 @@
 
 @implementation CategoryCommunicatorDelegate
 
+- (void)receivedCategoriesJSON:(NSData *)objectNotation {
+    
+}
+
+- (void)fetchingCategoriesFailedWithError:(NSError *)error {
+    
+}
+
 @end

@@ -19,18 +19,25 @@
     if (self) {
         self.dao = [ContatoDAO getInstance];
         self.navigationItem.title = @"Cadastro";
-        UIBarButtonItem *adiciona = [[UIBarButtonItem alloc] initWithTitle:@"Adiciona"
-                                                                     style:UIBarButtonItemStylePlain
-                                                                    target:self
-                                                                    action: @selector(addContato)];
-        self.navigationItem.rightBarButtonItem = adiciona;
+        _adiciona = [[UIBarButtonItem alloc] initWithTitle:@"Adiciona"
+                                             style:UIBarButtonItemStylePlain
+                                            target:self
+                                            action: @selector(addContato)];
+        self.navigationItem.rightBarButtonItem = _adiciona;
     }
     return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    if (self.contato) {
+        [self populaForm];
+    } else {
+        [self clearForm];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,8 +45,21 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)populaForm {
+    [self modificaBotaoParaAtualizar];
+    self.nome.text = self.contato.nome;
+    self.telefone.text = self.contato.telefone;
+    self.email.text = self.contato.email;
+    self.site.text = self.contato.site;
+    self.endereco.text = self.contato.endereco;
+}
+
+- (void) modificaBotaoParaAtualizar {
+    [_adiciona setAction:@selector(atualizaContato)];
+    [_adiciona setTitle:@"Atualizar"];
+}
+
 - (void)getDadosForm {
-    self.contato = [Contato new];
     self.contato.nome = self.nome.text;
     self.contato.telefone = self.telefone.text;
     self.contato.email = self.email.text;
@@ -48,14 +68,25 @@
 }
 
 - (void) addContato {
+    self.contato = [Contato new];
     [self getDadosForm];
+    
     if ([self isValidForm:self.contato]) {
         [self.dao insere:self.contato];
         [self clearForm];
-        [self.navigationController popViewControllerAnimated:YES];
+        [self direcionaUsuario];
     } else {
         [self alertError];
     }
+}
+
+- (void) atualizaContato {
+    [self getDadosForm];
+    [self direcionaUsuario];
+}
+
+- (void) direcionaUsuario {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (BOOL) isValidForm:(Contato *) contato {
