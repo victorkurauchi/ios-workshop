@@ -10,11 +10,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "CategoryCommunicatorDelegate.h"
 
-@protocol CategoryCommunicatorDelegate;
-
 @interface CategoryCommunicator : NSObject
-
-@property (weak, nonatomic) id<CategoryCommunicatorDelegate> delegate;
 
 - (void)listCategories;
 

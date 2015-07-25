@@ -10,9 +10,19 @@
 
 @implementation ListaContatosViewController
 
+- (void) contatoAtualizado:(Contato *) contato {
+    NSLog(@"contatoAtualizado %@", contato.nome);
+    self.linhaDestaque = [self.dao buscaPosicaoPorContato:contato];
+}
+- (void) contatoAdicionado:(Contato *) contato {
+    NSLog(@"CONTATO ADICIONADO %@", contato.nome);
+    self.linhaDestaque = [self.dao buscaPosicaoPorContato:contato];
+}
+
 - (id) init {
     self = [super init];
     if (self) {
+        self.linhaDestaque = -1;
         self.navigationItem.title = @"Contatos";
         
         UIBarButtonItem *add = [[ UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
@@ -21,6 +31,10 @@
         self.navigationItem.rightBarButtonItem = add;
         self.navigationItem.leftBarButtonItem = self.editButtonItem;
         self.dao = [ContatoDAO getInstance];
+        
+        UIGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self
+                                                                                       action:@selector(exibeMaisAcoes:)];
+        [self.tableView addGestureRecognizer:longPress];
     }
     
     return self;
@@ -28,6 +42,24 @@
 
 - (void) viewWillAppear:(BOOL)animated {
     [self.tableView reloadData];
+}
+
+- (void) viewDidAppear:(BOOL)animated {
+    if (self.linhaDestaque >= 0) {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForItem:self.linhaDestaque inSection:0];
+        
+        [self.tableView selectRowAtIndexPath:indexPath
+                                    animated:NO
+                              scrollPosition:UITableViewScrollPositionNone];
+        
+        [self.tableView scrollToRowAtIndexPath:indexPath
+                              atScrollPosition:UITableViewScrollPositionNone
+                                      animated:YES];
+        
+        self.linhaDestaque = -1;
+    }
+    
+    self.selected = nil;
 }
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -40,15 +72,19 @@
         [self.dao deletePorPosicao:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
-    
+}
+
+- (void)exibeMaisAcoes:(UIGestureRecognizer *) gesture {
+    NSLog(@"OLOKO %ld", (long)gesture.state);
 }
 
 - (void) mostraForm {
-    NSLog(@"huehueh");
     UIStoryboard *board = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     FormularioContatoViewController *f = [board instantiateViewControllerWithIdentifier:@"formContato"];
+    f.delegate = self;
     
     if (self.selected) {
+        NSLog(@"SELECIONEI");
         f.contato = self.selected;
     }
     

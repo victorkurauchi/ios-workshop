@@ -35,6 +35,10 @@ static ContatoDAO *daoCriado = nil;
     return self.lista[posicao];
 }
 
+- (NSInteger) buscaPosicaoPorContato:(Contato *) contato {
+    return [self.lista indexOfObject:contato];
+}
+
 - (void) deletePorPosicao:(NSInteger)posicao {
     [self.lista removeObject:self.lista[posicao]];
 }

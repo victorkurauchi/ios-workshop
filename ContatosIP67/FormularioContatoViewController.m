@@ -34,10 +34,15 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     if (self.contato) {
+        NSLog(@"AINDA TEM");
         [self populaForm];
     } else {
         [self clearForm];
     }
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [self clearForm];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -74,6 +79,10 @@
     if ([self isValidForm:self.contato]) {
         [self.dao insere:self.contato];
         [self clearForm];
+        
+        if (self.delegate) {
+            [self.delegate contatoAdicionado:self.contato];
+        }
         [self direcionaUsuario];
     } else {
         [self alertError];
@@ -82,6 +91,9 @@
 
 - (void) atualizaContato {
     [self getDadosForm];
+    if (self.delegate) {
+        [self.delegate contatoAtualizado:self.contato];
+    }
     [self direcionaUsuario];
 }
 

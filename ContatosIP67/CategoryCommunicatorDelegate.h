@@ -8,11 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol CategoryCommunicatorDelegate;
-
-@interface CategoryCommunicatorDelegate : NSObject
+@protocol CategoryCommunicatorDelegate<NSObject>;
 
 - (void)receivedCategoriesJSON:(NSData *)objectNotation;
 - (void)fetchingCategoriesFailedWithError:(NSError *)error;
 
 @end
+
+@interface CategoryCommunicatorDelegate : NSObject
+
+@property (weak) id<CategoryCommunicatorDelegate> delegate;
+@end
+

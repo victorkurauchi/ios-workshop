@@ -16,6 +16,7 @@
 - (void) insere:(Contato *)contato;
 - (Contato *) getPorPosicao:(NSInteger)posicao;
 - (NSInteger) getTotal;
+- (NSInteger) buscaPosicaoPorContato:(Contato *) contato;
 - (void) deletePorPosicao:(NSInteger)posicao ;
 
 + (id) getInstance;
