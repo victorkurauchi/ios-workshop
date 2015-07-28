@@ -75,7 +75,17 @@
 }
 
 - (void)exibeMaisAcoes:(UIGestureRecognizer *) gesture {
-    NSLog(@"OLOKO %ld", (long)gesture.state);
+    if (gesture.state == UIGestureRecognizerStateBegan) {
+        CGPoint ponto = [gesture locationInView:self.tableView];
+        NSIndexPath *index = [self.tableView indexPathForRowAtPoint:ponto];
+        
+        if (index) {
+            self.selected = [self.dao getPorPosicao:index.row];
+            _gerenciador = [[GerenciadorDeAcoes alloc] initWithContato:self.selected];
+            [self.gerenciador acoesDoController:self];
+        }
+
+    }
 }
 
 - (void) mostraForm {
@@ -84,7 +94,6 @@
     f.delegate = self;
     
     if (self.selected) {
-        NSLog(@"SELECIONEI");
         f.contato = self.selected;
     }
     

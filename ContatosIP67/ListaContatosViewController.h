@@ -10,12 +10,14 @@
 #import <UIKit/UIKit.h>
 #import "FormularioContatoViewController.h"
 #import "ContatoDAO.h"
+#import "GerenciadorDeAcoes.h"
 
 @interface ListaContatosViewController : UITableViewController<FormularioContatoViewControllerDelegate>
 
 @property (strong) ContatoDAO *dao;
 @property (strong) Contato *selected;
 @property NSInteger linhaDestaque;
+@property (readonly) GerenciadorDeAcoes *gerenciador;
 
 - (void) exibeMaisAcoes:(UIGestureRecognizer *)gesture;
 

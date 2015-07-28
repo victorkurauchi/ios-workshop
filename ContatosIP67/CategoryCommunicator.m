@@ -26,11 +26,11 @@
 }
 
 - (void) fetchingCategoriesFailedWithError:(NSError *) error {
-    NSLog(@"error");
+    NSLog(error);
 }
 
 - (void) receivedCategoriesJSON:(NSData *) data {
-    NSLog(@"success");
+    NSLog(data);
 }
 
 @end
