@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Contato.h"
 #import "ContatoDAO.h"
+#import <QuartzCore/QuartzCore.h>
 
 @protocol FormularioContatoViewControllerDelegate <NSObject>
 
@@ -17,7 +18,9 @@
 
 @end
 
-@interface FormularioContatoViewController : UIViewController
+@interface FormularioContatoViewController : UIViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate>
+
+-(IBAction)selecionaFoto:(id)sender;
 
 @property (weak) id<FormularioContatoViewControllerDelegate> delegate;
 @property IBOutlet UITextField *nome;
@@ -25,6 +28,7 @@
 @property IBOutlet UITextField *email;
 @property IBOutlet UITextField *endereco;
 @property IBOutlet UITextField *site;
+@property IBOutlet UIButton *foto;
 @property (strong) ContatoDAO *dao;
 @property (strong) Contato *contato;
 @property UIBarButtonItem *adiciona;

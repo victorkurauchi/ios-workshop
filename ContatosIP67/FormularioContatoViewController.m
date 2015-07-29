@@ -30,24 +30,86 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
     if (self.contato) {
         NSLog(@"AINDA TEM");
         [self populaForm];
     } else {
-        [self clearForm];
+        // [self clearForm];
     }
+    
+    [self renderizaRounded];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
-    [self clearForm];
+   // [self clearForm];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+// UIImagePickerDelegate
+- (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    UIImage *imagem = [info valueForKey:UIImagePickerControllerEditedImage];
+    // if url, download media and call it as UIImage
+    [self.foto setBackgroundImage:imagem forState:UIControlStateNormal];
+    [self.foto setTitle:nil forState:UIControlStateNormal];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+// ActionSheetDelegate
+- (void) actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    UIImagePickerController *picker = [UIImagePickerController new];
+    
+    picker.allowsEditing = YES;
+    picker.delegate = self;
+    
+    switch (buttonIndex) {
+        case 0:
+            picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        break;
+            
+        case 1:
+            picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        break;
+        default:
+        break;
+    }
+    
+    [self presentViewController:picker animated:YES completion:nil];
+}
+
+// Methods
+
+- (void) renderizaRounded {
+    self.foto.layer.cornerRadius = self.foto.frame.size.height/2.0;
+    self.foto.clipsToBounds = YES;
+    self.foto.layer.borderWidth = 1.0;
+    self.foto.layer.borderColor = [UIColor groupTableViewBackgroundColor].CGColor;
+    self.foto.layer.backgroundColor =[UIColor groupTableViewBackgroundColor].CGColor;
+    self.foto.backgroundColor = nil;
+}
+
+- (IBAction)selecionaFoto:(id)sender {
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        NSLog(@"tem");
+        UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"Escolha a foto" delegate:self cancelButtonTitle:@"Cancelar" destructiveButtonTitle:nil otherButtonTitles:@"Camera", @"Biblioteca", nil];
+        
+        [sheet showInView:self.view];
+        
+    } else {
+        UIImagePickerController *picker = [UIImagePickerController new];
+        picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        picker.allowsEditing = YES;
+        picker.delegate = self;
+        
+        [self presentViewController:picker animated:YES completion:nil];
+    }
 }
 
 - (void)populaForm {
@@ -57,6 +119,11 @@
     self.email.text = self.contato.email;
     self.site.text = self.contato.site;
     self.endereco.text = self.contato.endereco;
+    
+    if (self.contato.foto) {
+        [self.foto setBackgroundImage:self.contato.foto forState:UIControlStateNormal];
+        [self.foto setTitle:nil forState:UIControlStateNormal];
+    }
 }
 
 - (void) modificaBotaoParaAtualizar {
@@ -70,6 +137,11 @@
     self.contato.email = self.email.text;
     self.contato.site = self.site.text;
     self.contato.endereco = self.endereco.text;
+    
+    UIImage *fotoUploaded = [self.foto backgroundImageForState:UIControlStateNormal];
+    if (fotoUploaded) {
+        self.contato.foto = fotoUploaded;
+    }
 }
 
 - (void) addContato {

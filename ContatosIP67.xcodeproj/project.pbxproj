@@ -16,6 +16,10 @@
 		420E59111B5DB25300F81A48 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 420E590F1B5DB25300F81A48 /* LaunchScreen.xib */; };
 		420E591D1B5DB25300F81A48 /* ContatosIP67Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 420E591C1B5DB25300F81A48 /* ContatosIP67Tests.m */; };
 		420E59281B5DDA4C00F81A48 /* Contato.m in Sources */ = {isa = PBXBuildFile; fileRef = 420E59271B5DDA4C00F81A48 /* Contato.m */; };
+		4223DA8F1B683894008159B7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4223DA8E1B683894008159B7 /* QuartzCore.framework */; };
+		4223DA911B686387008159B7 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4223DA901B686387008159B7 /* MapKit.framework */; };
+		4223DA951B6863B5008159B7 /* MapaContatosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4223DA931B6863B5008159B7 /* MapaContatosViewController.m */; };
+		4223DA961B6863B5008159B7 /* MapaContatosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4223DA941B6863B5008159B7 /* MapaContatosViewController.xib */; };
 		423C74C21B5F17DA00D6E155 /* ContatoDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 423C74C11B5F17DA00D6E155 /* ContatoDAO.m */; };
 		423C74C51B5F297100D6E155 /* ListaContatosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 423C74C41B5F297100D6E155 /* ListaContatosViewController.m */; };
 		42C220E51B66EFCD00558AF7 /* GerenciadorDeAcoes.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C220E41B66EFCD00558AF7 /* GerenciadorDeAcoes.m */; };
@@ -52,6 +56,11 @@
 		420E591C1B5DB25300F81A48 /* ContatosIP67Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContatosIP67Tests.m; sourceTree = "<group>"; };
 		420E59261B5DDA4C00F81A48 /* Contato.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contato.h; sourceTree = "<group>"; };
 		420E59271B5DDA4C00F81A48 /* Contato.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contato.m; sourceTree = "<group>"; };
+		4223DA8E1B683894008159B7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		4223DA901B686387008159B7 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		4223DA921B6863B5008159B7 /* MapaContatosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapaContatosViewController.h; sourceTree = "<group>"; };
+		4223DA931B6863B5008159B7 /* MapaContatosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapaContatosViewController.m; sourceTree = "<group>"; };
+		4223DA941B6863B5008159B7 /* MapaContatosViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapaContatosViewController.xib; sourceTree = "<group>"; };
 		423C74C01B5F17DA00D6E155 /* ContatoDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContatoDAO.h; sourceTree = "<group>"; };
 		423C74C11B5F17DA00D6E155 /* ContatoDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContatoDAO.m; sourceTree = "<group>"; };
 		423C74C31B5F297100D6E155 /* ListaContatosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListaContatosViewController.h; sourceTree = "<group>"; };
@@ -72,6 +81,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4223DA911B686387008159B7 /* MapKit.framework in Frameworks */,
+				4223DA8F1B683894008159B7 /* QuartzCore.framework in Frameworks */,
 				42C220E71B670ED100558AF7 /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -89,6 +100,8 @@
 		420E58F11B5DB25200F81A48 = {
 			isa = PBXGroup;
 			children = (
+				4223DA901B686387008159B7 /* MapKit.framework */,
+				4223DA8E1B683894008159B7 /* QuartzCore.framework */,
 				42C220E61B670ED100558AF7 /* MessageUI.framework */,
 				420E58FC1B5DB25200F81A48 /* ContatosIP67 */,
 				420E59191B5DB25300F81A48 /* ContatosIP67Tests */,
@@ -129,6 +142,9 @@
 				420E590A1B5DB25300F81A48 /* Main.storyboard */,
 				420E590D1B5DB25300F81A48 /* Images.xcassets */,
 				420E590F1B5DB25300F81A48 /* LaunchScreen.xib */,
+				4223DA921B6863B5008159B7 /* MapaContatosViewController.h */,
+				4223DA931B6863B5008159B7 /* MapaContatosViewController.m */,
+				4223DA941B6863B5008159B7 /* MapaContatosViewController.xib */,
 				420E59041B5DB25300F81A48 /* ContatosIP67.xcdatamodeld */,
 				420E58FD1B5DB25200F81A48 /* Supporting Files */,
 			);
@@ -241,6 +257,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4223DA961B6863B5008159B7 /* MapaContatosViewController.xib in Resources */,
 				420E590C1B5DB25300F81A48 /* Main.storyboard in Resources */,
 				420E59111B5DB25300F81A48 /* LaunchScreen.xib in Resources */,
 				420E590E1B5DB25300F81A48 /* Images.xcassets in Resources */,
@@ -269,6 +286,7 @@
 				423C74C21B5F17DA00D6E155 /* ContatoDAO.m in Sources */,
 				557CA87D1B60A88000AF4F91 /* CategoryCommunicator.m in Sources */,
 				420E59091B5DB25300F81A48 /* FormularioContatoViewController.m in Sources */,
+				4223DA951B6863B5008159B7 /* MapaContatosViewController.m in Sources */,
 				557CA8771B60A3BF00AF4F91 /* APIConsumer.m in Sources */,
 				420E59001B5DB25200F81A48 /* main.m in Sources */,
 				42C220E51B66EFCD00558AF7 /* GerenciadorDeAcoes.m in Sources */,

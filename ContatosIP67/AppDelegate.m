@@ -22,7 +22,12 @@
     ListaContatosViewController *lista = [ListaContatosViewController new];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:lista];
     
-    self.window.rootViewController = nav;
+    MapaContatosViewController *mapa = [MapaContatosViewController new];
+    
+    UITabBarController *tabController = [UITabBarController new];
+    tabController.viewControllers = @[nav, mapa];
+    
+    self.window.rootViewController = tabController;
     
     [self.window makeKeyAndVisible];
     
