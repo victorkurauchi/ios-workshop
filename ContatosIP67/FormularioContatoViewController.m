@@ -86,6 +86,10 @@
 
 // Methods
 
+- (IBAction)buscarCoordenadas:(id)sender {
+    
+}
+
 - (void) renderizaRounded {
     self.foto.layer.cornerRadius = self.foto.frame.size.height/2.0;
     self.foto.clipsToBounds = YES;

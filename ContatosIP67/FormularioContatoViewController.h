@@ -33,5 +33,7 @@
 @property (strong) Contato *contato;
 @property UIBarButtonItem *adiciona;
 
+- (IBAction)buscarCoordenadas:(id)sender;
+
 @end
 
