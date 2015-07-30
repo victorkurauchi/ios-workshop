@@ -98,9 +98,9 @@
 - (IBAction)selecionaFoto:(id)sender {
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
         NSLog(@"tem");
-        UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"Escolha a foto" delegate:self cancelButtonTitle:@"Cancelar" destructiveButtonTitle:nil otherButtonTitles:@"Camera", @"Biblioteca", nil];
-        
-        [sheet showInView:self.view];
+//        UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"Escolha a foto" delegate:self cancelButtonTitle:@"Cancelar" destructiveButtonTitle:nil otherButtonTitles:@"Camera", @"Biblioteca", nil];
+//        
+//        [sheet showInView:self.view];
         
     } else {
         UIImagePickerController *picker = [UIImagePickerController new];

@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface MapaContatosViewController : UIViewController
+
+@property (weak,nonatomic) IBOutlet MKMapView *mapa;
+@property (strong) CLLocationManager *manager;
 
 @end

@@ -14,9 +14,27 @@
 
 @implementation MapaContatosViewController
 
+- (id) init {
+    self = [super init];
+    if (self) {
+        self.navigationItem.title = @"Localizacao";
+        UIImage * imagemTabItem = [UIImage imageNamed:@"mapa-contatos.png"];
+        UITabBarItem *tabItem = [[UITabBarItem alloc] initWithTitle:@"Mapa" image:imagemTabItem tag:0];
+        
+        self.tabBarItem = tabItem;
+    }
+    
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    MKUserTrackingBarButtonItem *gps = [[MKUserTrackingBarButtonItem alloc] initWithMapView:self.mapa];
+    self.navigationItem.rightBarButtonItem = gps;
+    
+    self.manager = [CLLocationManager new];
+    [self.manager requestWhenInUseAuthorization];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -23,9 +23,11 @@
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:lista];
     
     MapaContatosViewController *mapa = [MapaContatosViewController new];
+    UINavigationController *mapaNav = [[UINavigationController alloc] initWithRootViewController:mapa];
     
     UITabBarController *tabController = [UITabBarController new];
-    tabController.viewControllers = @[nav, mapa];
+    tabController.viewControllers = @[nav, mapaNav];
+    //tabController.selectedIndex = 1;
     
     self.window.rootViewController = tabController;
     

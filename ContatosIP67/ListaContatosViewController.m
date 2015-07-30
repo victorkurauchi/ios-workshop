@@ -35,6 +35,12 @@
         UIGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self
                                                                                        action:@selector(exibeMaisAcoes:)];
         [self.tableView addGestureRecognizer:longPress];
+        
+        UIImage * imagemTabItem = [UIImage imageNamed:@"lista-contatos.png"];
+        UITabBarItem *tabItem = [[UITabBarItem alloc] initWithTitle:@"Contatos" image:imagemTabItem tag:0];
+        
+        self.tabBarItem = tabItem;
+        self.navigationItem.title = @"Contatos";
     }
     
     return self;
