@@ -10,8 +10,9 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import "ContatoDAO.h"
+#import "Contato.h"
 
-@interface MapaContatosViewController : UIViewController< CLLocationManagerDelegate >
+@interface MapaContatosViewController : UIViewController< MKMapViewDelegate >
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapa;
 @property (strong) CLLocationManager *manager;
