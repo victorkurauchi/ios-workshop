@@ -103,11 +103,17 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="88l-an-RzX">
+                                <rect key="frame" x="254" y="208" width="20" height="20"/>
+                            </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mW6-nR-y4I">
-                                <rect key="frame" x="249" y="208" width="30" height="30"/>
+                                <rect key="frame" x="249" y="203" width="30" height="30"/>
                                 <state key="normal" image="gps">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="buscarCoordenadas:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="oXN-PM-xvQ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -115,9 +121,13 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="buttonGPS" destination="mW6-nR-y4I" id="8AG-TC-E1g"/>
                         <outlet property="email" destination="HPe-ab-i4P" id="PGx-r9-Ene"/>
                         <outlet property="endereco" destination="6i0-N7-aew" id="4ql-Nz-afp"/>
                         <outlet property="foto" destination="wrm-CX-u4s" id="l9F-Hr-pgQ"/>
+                        <outlet property="latitude" destination="Ffv-fl-MC7" id="yoK-Yz-nGq"/>
+                        <outlet property="loading" destination="88l-an-RzX" id="UF9-Cc-tqO"/>
+                        <outlet property="longitude" destination="W6i-lQ-eaY" id="A16-gt-cMu"/>
                         <outlet property="nome" destination="fQs-nC-53p" id="tis-lX-Jav"/>
                         <outlet property="site" destination="GAU-np-cOw" id="eot-Fh-oJE"/>
                         <outlet property="telefone" destination="OZh-tR-jJh" id="5kw-cs-aQC"/>

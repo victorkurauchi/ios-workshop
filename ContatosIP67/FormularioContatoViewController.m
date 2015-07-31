@@ -87,7 +87,20 @@
 // Methods
 
 - (IBAction)buscarCoordenadas:(id)sender {
-    
+    [self.buttonGPS setHidden:YES];
+    [self.loading startAnimating];
+
+    CLGeocoder *geocoder = [CLGeocoder new];
+    [geocoder geocodeAddressString:self.endereco.text completionHandler:^(NSArray *placemarks, NSError *error) {
+        [self.buttonGPS setHidden:NO];
+        [self.loading stopAnimating];
+        if (error == nil && [placemarks count] >0) {
+            CLPlacemark *resultado = placemarks[0];
+            CLLocationCoordinate2D coordenadas = resultado.location.coordinate;
+            self.latitude.text = [NSString stringWithFormat:@"%f", coordenadas.latitude];
+            self.longitude.text = [NSString stringWithFormat:@"%f", coordenadas.longitude];
+        }
+    }];
 }
 
 - (void) renderizaRounded {
@@ -123,6 +136,8 @@
     self.email.text = self.contato.email;
     self.site.text = self.contato.site;
     self.endereco.text = self.contato.endereco;
+    self.latitude.text = [self.contato.latitude stringValue];
+    self.longitude.text = [self.contato.longitude stringValue];
     
     if (self.contato.foto) {
         [self.foto setBackgroundImage:self.contato.foto forState:UIControlStateNormal];
@@ -141,7 +156,8 @@
     self.contato.email = self.email.text;
     self.contato.site = self.site.text;
     self.contato.endereco = self.endereco.text;
-    
+    self.contato.latitude = [NSNumber numberWithFloat: [self.latitude.text floatValue] ];
+    self.contato.longitude = [NSNumber numberWithFloat:[self.longitude.text floatValue]];
     UIImage *fotoUploaded = [self.foto backgroundImageForState:UIControlStateNormal];
     if (fotoUploaded) {
         self.contato.foto = fotoUploaded;
