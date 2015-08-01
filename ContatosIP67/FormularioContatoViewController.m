@@ -165,7 +165,7 @@
 }
 
 - (void) addContato {
-    self.contato = [Contato new];
+    self.contato = [self.dao novoContato];
     [self getDadosForm];
     
     if ([self isValidForm:self.contato]) {

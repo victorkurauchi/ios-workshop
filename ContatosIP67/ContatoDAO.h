@@ -12,6 +12,7 @@
 @interface ContatoDAO : NSObject
 
 @property (strong, readonly) NSMutableArray* lista;
+@property (strong) NSManagedObjectContext *context;
 
 - (void) insere:(Contato *)contato;
 - (Contato *) getPorPosicao:(NSInteger)posicao;
@@ -20,5 +21,7 @@
 - (void) deletePorPosicao:(NSInteger)posicao ;
 
 + (id) getInstance;
-
+- (void) inserirDados;
+- (Contato *) novoContato;
+    
 @end

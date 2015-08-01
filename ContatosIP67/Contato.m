@@ -10,8 +10,10 @@
 
 @implementation Contato
 
+@dynamic nome, telefone, email, endereco, site, latitude, longitude, foto;
+
 -(NSString *) description {
-    return _nome;
+    return self.nome;
 }
 
 -(CLLocationCoordinate2D) coordinate {

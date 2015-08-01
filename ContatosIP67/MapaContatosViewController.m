@@ -39,6 +39,12 @@
     
     self.manager = [CLLocationManager new];
     [self.manager requestWhenInUseAuthorization];
+    
+//    CLLocationCoordinate2D noLocation;
+//    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(noLocation, 500, 500);
+//    MKCoordinateRegion adjustedRegion = [self.mapa regionThatFits:viewRegion];
+//    [self.mapa setRegion:adjustedRegion animated:YES];
+//    self.mapa.showsUserLocation = YES;
 }
 
 - (void)didReceiveMemoryWarning {

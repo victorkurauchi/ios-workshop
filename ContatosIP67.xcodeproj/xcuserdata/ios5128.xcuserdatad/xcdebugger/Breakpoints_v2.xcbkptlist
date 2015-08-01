@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ContatosIP67/Contato.h"
-            timestampString = "459996285.841799"
+            timestampString = "460081989.368847"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
             landmarkName = "latitude"
             landmarkType = "19">
          </BreakpointContent>
