@@ -40,11 +40,9 @@
     self.manager = [CLLocationManager new];
     [self.manager requestWhenInUseAuthorization];
     
-//    CLLocationCoordinate2D noLocation;
-//    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(noLocation, 500, 500);
-//    MKCoordinateRegion adjustedRegion = [self.mapa regionThatFits:viewRegion];
-//    [self.mapa setRegion:adjustedRegion animated:YES];
-//    self.mapa.showsUserLocation = YES;
+    self.mapa.showsPointsOfInterest = YES;
+    self.mapa.showsBuildings = YES;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -85,7 +83,32 @@
         pino.leftCalloutAccessoryView = imagemContato;
     }
     
+    CLLocationCoordinate2D location = CLLocationCoordinate2DMake([contato.latitude doubleValue], [contato.longitude doubleValue]);
+    MKCoordinateRegion region;
+    
+    region = MKCoordinateRegionMake(location, MKCoordinateSpanMake(0.5, 0.5));
+    // 0.5 is spanning value for region, make change if you feel to adjust bit more
+    
+    MKCoordinateRegion adjustedRegion = [mapView regionThatFits:region];
+    [mapView setRegion:adjustedRegion animated:YES];
+    
     return pino;
+}
+
+// MapViewDelegate
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
+    NSLog(@"user location updated...");
+    NSLog(@"%@", userLocation);
+    
+//        CLLocationCoordinate2D noLocation;
+//        MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(noLocation, 500, 500);
+//        MKCoordinateRegion adjustedRegion = [self.mapa regionThatFits:viewRegion];
+//        [self.mapa setRegion:adjustedRegion animated:YES];
+//        self.mapa.showsUserLocation = YES;
+}
+
+- (void)mapViewWillStartLoadingMap:(MKMapView *)mapView {
+    NSLog(@"will start...");
 }
 
 /*
